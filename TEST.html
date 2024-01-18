@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>TEST</title>
+</head>
+<body>
+	<form>
+		<div>
+			<label for="name">名前：</label><br />
+			<input id="name" name="name" type="text" size="30" />
+		</div>
+		<div>
+			<label for="nickname">ニックネーム：</label><br />
+			<input id="nickname" name="nickname" type="text" size="30" />
+		</div>
+		<div>
+			<input type='button' id="tuikaBtn" value='追加'>
+		</div>
+	</form>
+	<div id="result"></div>
+	<table id="tuikamoto" border="1"></table>
+	
+	<script>
+		let tuikaBtn = document.getElementById('tuikaBtn');
+		
+		count = 0;
+		tuikaBtn.addEventListener('click', function() {
+			if (count < 3) {
+				let name = document.getElementById('name').value;
+				let nickname = document.getElementById('nickname').value;
+				
+				if (name !== ' ' && nickname !== ' ') {
+					let cofirm = confirm(name + 'さん' + nickname + 'を登録します。よろしいですか？');
+				
+					if (confirm) {
+						let result = document.getElementById('result');
+						result.innerHTML +=　'<p>' + name + 'さん' + nickname + 'にて登録しました。</p>';
+						alert(name + 'さん' + nickname + 'にて登録しました。');
+						count++;
+						
+						if (count === 3) {
+								tuikaBtn.style.display = 'none';
+						}
+				
+						// テーブルに追加
+						let table = document.getElementById('tuikamoto');
+						let row = table.insertRow(-1);
+						let cell1 = row.insertCell(-1);
+						let cell2 = row.insertCell(-1);
+						let cell3 = row.insertCell(-1);
+						cell1.innerHTML = name;
+						cell2.innerHTML = nickname;
+				
+						// 削除ボタンを作成
+						deleteBtn = document.createElement('input');
+						deleteBtn.type = 'button';
+						deleteBtn.value = '削除';
+						cell3.appendChild(deleteBtn);
+						deleteBtn.addEventListener('click', function() {
+							deleteRow(this);
+						});
+					}				
+				} else {
+					alert('名前とニックネームを入力してください。')
+				}
+			} else {
+				alert('３回登録済です。');
+			}
+		});
+		
+		function deleteRow(btn) {
+			let row = btn.parentNode.parentNode;
+			row.parentNode.removeChild(row);
+			count--;
+			
+			if (count < 3) {
+				tuikaBtn.style.display = 'block';
+			}
+		}
+	</script>
+</body>
+</html>
