@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>kadaiA</title>
+	<style>
+		#output {
+			font-weight: bold;
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<h2>当選者発表ツール</h2>
+	<button onclick="show()">抽選条件設定</button>
+	<p>参加者数：<span id="san"></span><br>
+	当選者数：<span id="tou"></span></p>
+	<button onclick="publication()">当選者発表！</button>
+	<div id ="output" ></div>
+	
+	<script>
+		let san = document.getElementById('san');
+		let tou = document.getElementById('tou');
+		function show() {
+			let san_num = window.prompt("参加者数を入力");
+			let tou_num = window.prompt("当選者数を入力");
+			san.textContent = san_num;
+			tou.textContent = tou_num;
+		}
+		
+		let nums = []; 
+		let output = document.getElementById('output');
+		function publication() {
+			n = parseInt(san.textContent);
+			m = parseInt(tou.textContent);
+			for (let i = 0; i < m; i++) {
+				num = Math.floor(Math.random() * 15) + 1;
+				if (!nums.includes(num)) {
+					nums[i] = num
+				}
+				str = nums.join(',');
+				output.textContent = str;
+			}
+		}
+	</script>
+</body>
+</html>
