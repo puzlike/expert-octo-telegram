@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body><!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>プロ演Ⅱ　第13回授業課題</title>
+		<style>
+		<!--以下のcssの記述はそのまま記述する-->
+		body {
+			text-align: center;
+		}
+		img {
+			width: 100px;
+			cursor: pointer;
+		}
+		</style>
+</head>
+<body>
+	<h1>じゃんけんゲーム</h1>
+	<p>クリックして手を選んでください</p>
+	<img src="gu.png" alt="グー" onClick="startGame(0)">
+	<img src="cyoki.png" alt="チョキ" onClick="startGame(1)">
+	<img src="pa.png" alt="パー" onClick="startGame(2)">
+	<div id="result"><div>
+	<script>
+		function startGame(n) {
+			let m = Math.floor(Math.random() * 3)
+			let hand = ["グー", "チョキ", "パー"];
+			alert("あなたが選んだ手は" + hand[n] + "です。");
+			alert("コンピュータが選んだ手は" + hand[m] + "です。");
+			
+			str = judge(n, m);
+			displayResult(str);
+		}
+		
+		function judge(n, m) {
+			let str ="";
+			if (n == m) {
+				str = "あいこです";
+			} else if ((n == 0 && m == 1) || (n == 1 && m == 2) || (n == 2 && m == 0)) {
+				str = "あなたの勝ちです";
+			} else {
+				str = "コンピュータの勝ちです";
+			}
+			return str;
+		}
+			
+		function displayResult(str) {
+			result = document.getElementById('result');
+			result.textContent = "結果: " + str;
+		}
+	</script>
+</body>
+</html>
+</body>
+</html>
