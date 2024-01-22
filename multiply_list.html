@@ -15,7 +15,7 @@
       for (let j = 1; j <= 20; j++) {
         let cell = row.insertCell();
         k = i * j;
-        k = String(k).padStart(4, '*');
+        k = String(k).padStart(3, '*');
         let text = document.createTextNode(k);
         cell.appendChild(text);
       }
