@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>25×20の掛け算</title>
+</head>
+<body>
+  <p>【25×20の掛け算】</p>
+  <div id="output"></div>
+  <script>
+    output = document.getElementById('output');
+    tate = 25
+    yoko = 20
+    
+    let str = "";
+    for (let i = 1; i <= tate; i++) {
+      for (let j = 1; j <= yoko; j++) {
+        k = i * j;
+        str += (String(k).padStart(3, '*')).padStart(4);
+      }
+      str += '<br>'
+	}
+	output.innerHTML= str;
+  </script>
+</body>
+</html>
