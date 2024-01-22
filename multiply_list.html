@@ -6,21 +6,20 @@
 </head>
 <body>
   <p>【25×20の掛け算】</p>
-  <div id="output"></div>
+  <table id='output'> </table>
   <script>
     output = document.getElementById('output');
-    tate = 25
-    yoko = 20
     
-    let str = "";
-    for (let i = 1; i <= tate; i++) {
-      for (let j = 1; j <= yoko; j++) {
+    for (let i = 1; i <= 25; i++) {
+      let row = output.insertRow();
+      for (let j = 1; j <= 20; j++) {
+        let cell = row.insertCell();
         k = i * j;
-        str += (String(k).padStart(3, '*')).padStart(4);
+        k = String(k).padStart(4, '*');
+        let text = document.createTextNode(k);
+        cell.appendChild(text);
       }
-      str += '<br>'
 	}
-	output.innerHTML= str;
   </script>
 </body>
 </html>
