@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>lesson01 クリックイベント</title>
+<link rel="stylesheet" type="text/css" href="base.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="button1" class="button">
+<p>button</p>
+</div><!-- button1 -->
+
+<div id="button2" class="button">
+<p>button</p>
+</div><!-- button2 -->
+
+<div id="button3" class="button">
+<p>button</p>
+</div><!-- button3 -->
+</div><!-- wrapper -->
+
+<script>
+let button_list=document.querySelectorAll(".button");
+for (let button of  button_list) {
+	button.addEventListener('mousedown', function() {
+		button.style.backgroundColor = '#f000';
+	});
+	button.addEventListener('mouseout', function() {
+		button.style.backgroundColor = '#fdd';
+	});
+}
+
+</script>
+</body>
+</html>
