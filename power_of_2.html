@@ -6,7 +6,25 @@
 </head>
 <body>
 	<script>
-		
+		num = parseInt(prompt("2の○乗は？"));
+		if (num == 0) {
+			document.write(`2の${num}乗は1です`);
+		}
+		else if (num >= 1) {
+			ans = 2;
+			for (let i = 1; i < num; i++) {
+				ans = ans * 2;
+			}
+			document.write(`2の${num}乗は${ans}です`);
+		}
+		else {
+			num = -num;
+			ans = -2;
+			for (let i = 1; i < num; i++) {
+				ans = ans * 2;
+			}
+			document.write(`2の-${num}乗は${ans}です`);
+		}		
 	</script>
 </body>
 </html>
