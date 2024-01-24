@@ -23,12 +23,12 @@
 <script>
 let button_list=document.querySelectorAll(".button");
 for (let button of  button_list) {
-	button.addEventListener('mousedown', function() {
+	button.addEventListener('click', function() {
 		button.style.backgroundColor = '#f00';
-	});
-	button.addEventListener('mouseup', function() {
+	},);
+	button.addEventListener('mouseleave', function() {
 		button.style.backgroundColor = '#fdd';
-	});
+	}, false);
 }
 
 </script>
