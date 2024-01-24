@@ -25,7 +25,7 @@ let button_list=document.querySelectorAll(".button");
 for (let button of  button_list) {
 	button.addEventListener('click', function() {
 		button.style.backgroundColor = '#f00';
-	},);
+	}, false);
 	button.addEventListener('mouseleave', function() {
 		button.style.backgroundColor = '';
 	}, false);
