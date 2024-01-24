@@ -24,9 +24,9 @@
 let button_list=document.querySelectorAll(".button");
 for (let button of  button_list) {
 	button.addEventListener('mousedown', function() {
-		button.style.backgroundColor = '#f000';
+		button.style.backgroundColor = '#f00';
 	});
-	button.addEventListener('mouseout', function() {
+	button.addEventListener('mouseup', function() {
 		button.style.backgroundColor = '#fdd';
 	});
 }
