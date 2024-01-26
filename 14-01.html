@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>プロ演Ⅱ　第14回授業課題</title>
+	<style>
+		body {
+			text-align: center;
+		}
+		
+		img {
+			width: 50px;
+			height: 50px;
+			margin: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>サイコロゲーム</h1>
+	<img src="sai_1.png" alt="1の目"  class="dice1">
+	<img src="sai_1.png" alt="1の目"  class="dice2">
+	<p class="total"></p>
+	<p>履歴</p>
+	<table class="history"></table>
+	<input type="button" class="delBtn" value="履歴を削除">
+  <script>
+		let dice1 = document.querySelector('.dice1');
+		let dice2 = document.querySelector('.dice2');
+		let total = document.querySelector('.total');
+		let history = document.querySelector('.history');
+		let delBtn = document.querySelector('.delBtn');
+		let dice_imgs = ['dice_1.png', 'dice_2.png', 'dice_3.png', 'dice_4.png', 'dice_5.png', 'dice_6.png'];
+		let num1, num2;
+		dice1.addEventListener('click', function() {
+			num1 = Math.floor(Math.random() * 6) + 1;
+			this.src = dice_imgs[num1- 1];
+			this.setAttribute('alt', `${num1}の目`); 
+		}, false)
+		
+		dice2.addEventListener('click', function() {
+			num2 = Math.floor(Math.random() * 6) + 1
+			this.src = dice_imgs[num2 - 1];
+			this.setAttribute('alt', `${num2}の目`); 
+			let wa = num1 + num2;
+			total.textContent = `合計：${wa}`;
+			let text = document.createTextNode(wa);
+			let row = history.insertRow(); 
+			let cell = row.insertCell();
+			cell.appendChild(text);
+			history.style.margin = '0 auto';
+		}, false)
+		
+		delBtn.addEventListener('click', function() {
+			let row_num = history.rows.length;
+			history.deleteRow(row_num - 1);
+		}, false);
+	  </script>
+</body>
+</html>
