@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>四則演算</title>
+</head>
+<body>
+	<form>
+		<div>
+			<label for="num1">数値１：</label><br />
+			<input id="num1" name="num1" type="text" size="30" />
+		</div>
+		<div>
+			<label for="num2">数値２：</label><br />
+			<input id="num2" name="num2" type="text" size="30" />
+		</div>
+		<div>
+			<input id="calcBtn" type="button" value="計算">
+		</div>
+	</form>
+	<div id="output"></div>
+	<script>
+		let num1 = document.querySelector('#num1');
+		let num2 = document.querySelector('#num2');
+		let calcBtn = document.querySelector('#calcBtn');
+		calcBtn.addEventListener('click',function() {
+			num1 = parseInt(num1.value);
+			num2 = parseInt(num2.value);
+			let add = num1 + num2;
+			let sub = num1 - num2;
+			let multi = num1 * num2;
+			let div = num1 / num2;
+			str = `${num1}＋${num2}＝${add}<br>${num1}ー${num2}＝${sub}<br>${num1}×${num2}＝${multi}<br>${num1}÷${num2}＝${div}`
+			output.innerHTML = str 
+		}, false);
+	</script>
+</body>
+</html>
