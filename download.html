@@ -20,8 +20,7 @@
 		csv_file = document.querySelector('#csv_file');
 		download = document.querySelector('#download');
 		csv_file.addEventListener('change', function() {
-			csv_file = csv_file.value;
-			download.setAttribute('download', csv_file);
+			download.setAttribute('download', csv_file.value);
 		},false);
 		function handleDownload() {
 		}
