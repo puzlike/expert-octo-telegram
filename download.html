@@ -10,12 +10,11 @@
 		<label for="csv_file">csvファイル：</label><br />
 		<select id="csv_file">
 			<option value="">選んでください</option>
-			<option value="download.csv">download.csv</option>
 			<option value="abs.csv">abc.csv</option>
 			<option value="def.csv">def.csv</option>
 		</select>
 	</form>
-	<a id="download" href="#" onclick="handleDownload()">ダウンロード</a>
+	<a id="download" href="#" onclick="handleDownload()" download="download.csv">ダウンロード</a>
 	<script>
 		csv_file = document.querySelector('#csv_file');
 		download = document.querySelector('#download');
