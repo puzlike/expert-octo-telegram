@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>プルダウンによるダウンロードファイル名変更</title>
+	
+</head>
+<body>
+	<form>
+		<label for="csv_file">csvファイル：</label><br />
+		<select id="csv_file">
+			<option value="">選んでください</option>
+			<option value="download.csv">download.csv</option>
+			<option value="abs.csv">abc.csv</option>
+			<option value="def.csv">def.csv</option>
+		</select>
+	</form>
+	<a id="download" href="#" onclick="handleDownload()">ダウンロード</a>
+	<script>
+		csv_file = document.querySelector('#csv_file');
+		download = document.querySelector('#download');
+		csv_file.addEventListener('change', function() {
+			csv_file = csv_file.value;
+			download.setAttribute('download', csv_file);
+		},false);
+		function handleDownload() {
+		}
+	</script>
+</body>
+</html>
