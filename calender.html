@@ -26,6 +26,9 @@
 		outputBtn = document.querySelector('#outputBtn');
 		calender = document.querySelector('#calender');
 		caption = document.querySelector('#caption');
+		document.addEventListener('DOMContentLoaded', function() {
+			year_month.focus();
+		}, false);
 		outputBtn.addEventListener('click', function() {
 			str = year_month.value
 			year = Number.parseInt(str.substring(0, 4));
