@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="課題2-1-2 ECサービスのユーザー詳細登録ページを作成しよう">
+	<title>課題2-1 入力欄を使って登録ページを作成する！</title>  
+	<style>
+	fieldset {
+		margin: 20px 0;
+	}
+	</style>
+</head>
+<body>
+	<form name="user_form" action="user_register.php" method="post">
+	<fieldset>
+		<legend>会員情報の詳細を登録してください</legend>
+		
+		<form name="schedule" action="user_schedule.php" method="post">
+		<fieldset>
+			<legent>お名前</legent>
+			<p>
+				<label for="surname">姓：
+					<input type="text" name="surname" id="name">
+				</label>
+				<label for="firstname" >名：
+					<input type="text" name="firstname" id="name">
+				</label>
+			</p>
+			<p>
+				<label for="surname">姓(フリガナ)：
+					<input type="text" name="surname" id="name">
+				</label>
+				<label for="firstname" >名(フリガナ)：
+					<input type="text" name="firstname" id="name">
+				</label>
+			</p>
+		</fieldset>
+
+		<fieldset>
+			<legent>お住まい</legent>
+			<p>
+				<label for="postcode">郵便番号：
+					<input type="text" name="postcode" id="place">
+				</label>
+			</p>
+			<p>
+				<label for="purefactures" >お住まいの都道府県は？
+					<select name="prefactures" id="place">
+						<option value="北海道">北海道</option>
+						<option value="青森">青森</option>
+						<option value="岩手">岩手</option>
+						<option value="宮城">宮城</option>
+						<option value="長崎">長崎</option>
+						<option value="沖縄">沖縄</option>
+					</select>
+				</label>
+			</p>
+			<p>
+				<label for="municipalty">市町村：
+					<input type="text" name="municipalty" id="place">
+				</label>
+			</p>
+			<p>
+				<label for="address">番地：
+					<input type="text" name="address" id="place">
+				</label>
+			</p>
+			<p>
+				<label for="room_number" >部屋番号：
+					<input type="text" name="room_number" id="place">
+				</label>
+			</p>
+		</fieldset>
+	
+		<fieldset>
+			<legent>ご連絡先</legent>
+			<p>
+				<label for="telephon_number">電話番号：
+					<input type="tel" name="telephon_number" id="contact">
+				</label>
+			</p>
+			<p>
+				<label for="time">連絡が取れる時間帯：
+					<input type="radio" name="time" value="1" id="contact">1.午前中
+					<input type="radio" name="time" value="2" id="contact">2.午後夕方
+					<input type="radio" name="time" value="3" id="contact">3.午後深夜
+				</label>
+			</p>
+		</fieldset>
+	
+	</fieldset>
+	<p></p><input type="submit" value="送信"></p>
+	</form>
+</body>
+</html>
