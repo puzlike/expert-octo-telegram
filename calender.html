@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>カレンダー</title>
+	<style>
+		#calender {
+			width:200px;
+		}
+		td {
+			text-align: right;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<label>年月：<input type="text" id="year_month"></label>
+		<input type="button" value="カレンダー表示" id="outputBtn">
+	</form>
+	<table id="calender">
+		<caption id="caption"></caption>
+		<tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
+	</table>
+	<script>
+		year_month = document.querySelector('#year_month');
+		outputBtn = document.querySelector('#outputBtn');
+		calender = document.querySelector('#calender');
+		caption = document.querySelector('#caption');
+		outputBtn.addEventListener('click', function() {
+			str = year_month.value
+			year = Number.parseInt(str.substring(0, 4));
+			month = Number.parseInt(str.substring(4));
+			l = str.length;
+			if (l != 6) { 
+				alert("6桁の数値を入力してください");
+			} else if (month < 1 || month > 12) {
+					alert("下二桁は01から12までの数値を入力してください");
+			} else {
+				caption.textContent = `${year}年　${month}月`
+			}
+			dates = [31,28,31,30,31,30,31,31,30,31,30];
+			if ((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0)) {
+				dates[1] = 29;
+			}
+			date_num = dates[month - 1] 
+			date_list = []
+			startDate = new Date(year, month - 1, 1);
+			startDay = startDate.getDay();
+			l = date_num + startDay;
+			i = 0;
+			while (i < l)  {
+				if (i < startDay) {
+					str = "  ";
+				} else {
+					str = String(i - startDay).padStart(2);
+				}
+				date_list.push(str);
+				i++;
+			}
+			
+			n = Math.floor(l / 7);
+			if (l % 7 != 0) {
+				n++;
+			}
+			
+			for (let i = 0; i < n; i++) {
+				let row = calender.insertRow();
+				for (let j = 0; j < 7; j++) {
+					let cell = row.insertCell();
+    				k = i * 7 + j;
+    				if (k == l) {
+						break;
+					}
+					str = date_list[k];
+    				let text = document.createTextNode(str);
+    				cell.appendChild(text);
+    			}
+			}    	
+		}, false);
+	</script>
+</body>
+</html>
