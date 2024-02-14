@@ -17,15 +17,17 @@
 		<label>年月：<input type="text" id="year_month"></label>
 		<input type="button" value="カレンダー表示" id="outputBtn">
 	</form>
-	<table id="calender">
-		<caption id="caption"></caption>
-		<tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
+	<table>
+		<caption id="cap"></caption>
+		<thead id="th"></thead>
+		<tbody id="tb"></tbody>
 	</table>
 	<script>
 		year_month = document.querySelector('#year_month');
 		outputBtn = document.querySelector('#outputBtn');
-		calender = document.querySelector('#calender');
-		caption = document.querySelector('#caption');
+		cap = document.querySelector('#cap');
+		th = document.querySelector('#th');
+		tb = document.querySelector('#tb');
 		document.addEventListener('DOMContentLoaded', function() {
 			year_month.focus();
 		}, false);
@@ -37,11 +39,17 @@
 			if (l != 6) { 
 				alert("6桁の数値を入力してください");
 			} else if (month < 1 || month > 12) {
-					alert("下二桁は01から12までの数値を入力してください");
+				alert("下二桁は01から12までの数値を入力してください");
 			} else {
-				caption.textContent = `${year}年　${month}月`
+				cap.textContent = `${year}年　${month}月`
 			}
-			dates = [31,28,31,30,31,30,31,31,30,31,30];
+			days = ["日", "月", "火", "水", "木", "金", "土"];
+			str = "";
+			for (let i = 0; i < 7; i++) {
+				str += "<th>" + days[i] + "</th>";
+			}
+			th.innerHTML = "<tr>" + str + "</tr>";
+			dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30];
 			if ((year % 4 == 0) && (year % 100 != 0 || year % 400 == 0)) {
 				dates[1] = 29;
 			}
@@ -53,7 +61,7 @@
 			i = 0;
 			while (i < l)  {
 				if (i < startDay) {
-					str = "  ";
+					str = " ";
 				} else {
 					str = String(i - startDay + 1);
 				}
@@ -66,19 +74,19 @@
 				n++;
 			}
 			
+			str = "";
 			for (let i = 0; i < n; i++) {
-				let row = calender.insertRow();
+				row = "";
 				for (let j = 0; j < 7; j++) {
-					let cell = row.insertCell();
-    				k = i * 7 + j;
+					k = i * 7 + j;
     				if (k == l) {
 						break;
 					}
-					str = date_list[k];
-    				let text = document.createTextNode(str);
-    				cell.appendChild(text);
+					row += "<td>" + date_list[k] + "</td>";
     			}
-			}    	
+    			str += "<tr>" + row + "</tr>";
+			}
+			tb.innerHTML = str
 		}, false);
 	</script>
 </body>
