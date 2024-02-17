@@ -19,11 +19,8 @@
 			b = Number.parseInt(input[1].value);
 			n = Number.parseInt(input[2].value);
 			mass = a / Math.pow((1 + b / 100), n);
-			fmt = new Intl.NumberFormat('ja-Jp', {
-				style: 'decimal',
-				maximumFractionDigits: 2
-			});
-			input[3].value = fmt.format(mass); 
+			mass = (Math.round(mass * 100)) / 100;
+			input[3].value = mass; 
 		}, false); 
 	</script>
 </body>
