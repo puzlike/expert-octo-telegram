@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		input {
+			width: 50px;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<p>何円の為替損益まで耐えられるか？</p>
+		<p>購入時１米ドル：<input name= "a" size="5" type="number">円</p>
+		<p>　　　　利回り：<input name="b" size="5" type="number">％</p>
+		<p>　　　投資期間：<input name="n" size="5" type="number">年</p>
+		<p>　　　　　答え：<input name="mass" size="5" type="number">円</p>
+	</form>
+	<input type="submit" value="計算" id="calcBtn">
+	<script>
+		let calcBtn = document.querySelector('#calcBtn');
+		let input = document.getElementsByTagName('input');
+		calcBtn.addEventListener('click', function() {
+			a = Number.parseInt(input[0].value);
+			b = Number.parseInt(input[1].value);
+			n = Number.parseInt(input[2].value);
+			mass = a / Math.pow((1 + b / 100), n);
+			mass = (Math.round(mass * 100)) / 100;
+			input[3].value = mass; 
+		}, false); 
+	</script>
+</body>
+</html>
