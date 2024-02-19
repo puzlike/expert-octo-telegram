@@ -12,22 +12,25 @@
 <body>
 	<form>
 		<p>何円の為替損益まで耐えられるか？</p>
-		<p>購入時１米ドル：<input name= "a" size="5" type="number">円</p>
-		<p>　　　　利回り：<input name="b" size="5" type="number">％</p>
-		<p>　　　投資期間：<input name="n" size="5" type="number">年</p>
-		<p>　　　　　答え：<input name="mass" size="5" type="number">円</p>
+		<p>購入時１米ドル：<input name= "doll" size="5" type="number">円</p>
+		<p>　　　　利回り：<input name="persent" size="5" type="number">％</p>
+		<p>　　　投資期間：<input name="length" size="5" type="number">年</p>
+		<p>　　　　　答え：<input name="anser" size="5" type="number">円</p>
 	</form>
 	<input type="submit" value="計算" id="calcBtn">
 	<script>
 		let calcBtn = document.querySelector('#calcBtn');
-		let input = document.getElementsByTagName('input');
+		let doll = document.querySelector('input[name="doll"]');
+		let persent = document.querySelector('input[name="persent"]');
+		let length = document.querySelector('input[name="length"]');
+		let anser = document.querySelector('input[name="anser"]');
 		calcBtn.addEventListener('click', function() {
-			a = Number.parseInt(input[0].value);
-			b = Number.parseInt(input[1].value);
-			n = Number.parseInt(input[2].value);
+			a = Number.parseInt(doll.value);
+			b = Number.parseInt(persent.value);
+			n = Number.parseInt(length.value);
 			mass = a / Math.pow((1 + b / 100), n);
 			mass = (Math.round(mass * 100)) / 100;
-			input[3].value = mass; 
+			anser.value = mass; 
 		}, false); 
 	</script>
 </body>
