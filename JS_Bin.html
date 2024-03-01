@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>JS Bin</title>
+	</head>
+	<body>
+		<button type="button" id="B1" onclick="F1()">押す</button>
+		<button type="button" id="B2" >1</button>
+		<button type="button" id="B3" onclick="F3()">消す</button>
+		<script>
+			let X="1";
+			　let B2 = document.getElementById("B2");
+			function F1(){
+				X=X+"1";
+				B2.innerText=X;
+				if (B2.innerText.length% 2 == 0) {
+					B2.style.height="50px";
+				} else {
+					B2.style.height="5px";
+				}
+			}
+
+			function F3(){
+				B2.style.height="20px";
+			}
+		</script>
+	</body>
+</html>
