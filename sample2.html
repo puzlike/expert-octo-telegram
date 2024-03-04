@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.wrap {
+			display: grid;
+			grid-template-rows: 100px 100px 100px 100px 100px 80px;
+			grid-template-columns: 100px 600px 100px;
+		}
+		.header {
+			grid-row-start: 1;
+			grid-row-end: 2;
+			grid-column-start: 1;
+			grid-column-end: 4;
+			margin: 5px;
+			border: 2px solid #121212;
+		}
+		.menu {
+			grid-row-start: 2;
+			grid-row-end: 6;
+			grid-column-start: 1;
+			grid-column-end: 2;
+			margin:5px;
+			border: 2px solid #121212;
+		}
+	
+		.footer {
+			grid-row-start: 6;
+			grid-row-end: 7;
+			grid-column-start: 1;
+			grid-column-end: 4;
+			margin: 5px;
+			border: 2px solid #121212;
+		}
+		.wrap1 {
+			grid-row-start: 2;
+			grid-row-end: 3;
+			grid-column-start: 2;
+			grid-column-end:3;
+			margin: 5px;
+			border: 2px solid #121212;
+			display: flex;
+		}
+		.wrap2 {
+			grid-row-start: 3;
+			grid-row-end: 4;
+			grid-column-start: 2;
+			grid-column-end:3;
+			margin: 5px;
+			border: 2px solid #121212;
+			display: flex;
+		}
+		.wrap3 {
+			grid-row-start: 4;
+			grid-row-end: 5;
+			grid-column-start: 2;
+			grid-column-end:3;
+			margin: 5px;
+			border: 2px solid #121212;
+			display: flex;
+		}
+		.wrap4 {
+			grid-row-start: 5;
+			grid-row-end: 6;
+			grid-column-start: 2;
+			grid-column-end:3;
+			margin: 5px;
+			border: 2px solid #121212;
+			display: flex;
+		}
+		.side {
+			grid-row-start: 2;
+			grid-row-end: 6;
+			grid-column-start: 3;
+			grid-column-end: 4;
+			margin: 5px;
+			border: 2px solid #121212;
+		}
+		.box1 {
+			width: 150px;
+			background-color: lightblue;
+			margin: 5px;
+		}
+		.box2 {
+			width: 200px;
+			background-color: green;
+			margin: 5px;
+		}
+		.box3 {
+			width: 300px;
+			background-color: red;
+			margin: 5px;
+		}
+		.box4 {
+			width: 100px;
+			background-color: blue;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">ヘッダー</div>
+		<div class="menu">メニュー</div>
+		<div class="wrap1">
+			<div class="box1">1段目</div>
+			<div class="box1">1段目</div>
+			<div class="box1">1段目</div>
+			<div class="box1">1段目</div>
+		</div>
+		<div class="wrap2">
+			<div class="box2">2段目</div>
+			<div class="box2">2段目</div>
+			<div class="box2">2段目</div>
+		</div>
+		<div class="wrap3">
+			<div class="box3">3段目</div>
+			<div class="box3">3段目</div>
+		</div>
+		<div class="wrap4">
+			<div class="box4">4段目</div>
+			<div class="box4">4段目</div>
+			<div class="box4">4段目</div>
+			<div class="box4">4段目</div>
+			<div class="box4">4段目</div>
+			<div class="box4">4段目</div>
+		</div>
+		<div class="footer">フッター</div>
+		<div class="side">サイド</div>
+	</div>
+</body>
+</html>
