@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div class="output"></div>
+	<script>
+		output = document.querySelector('.output');
+		total = 0;
+		while (total <= 100) {
+			dice = Math.floor(Math.random() * 6) + 1;
+			total += dice;
+		}
+		output.textContent =  `サイコロの目の合計は${total}です。`
+	</script>
+</body>
+</html>
