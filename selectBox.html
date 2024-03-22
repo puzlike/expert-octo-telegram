@@ -166,12 +166,12 @@
     let country2 = document.getElementById('country2');
     country1.addEventListener('change', function() {
       idx = country1.selectedIndex;
-      country2[idx].style.display = "none";
-      country3[idx].style.display = "none";
+      country2[idx].disabled = true;
+      country3[idx].disabled = true;
     }, false);
     country2.addEventListener('change', function() {
       idx = country2.selectedIndex;
-      country3[idx].style.display = "none";
+      country3[idx].disabled = true;
     }, false);
   </script>
 </body>
