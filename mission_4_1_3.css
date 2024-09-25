@@ -1,0 +1,62 @@
+@charset "UTF-8";
+.wrap {
+  height: 100%;
+}
+section, .right, div, header, footer{
+    border: solid 1px;
+}
+section{
+    box-sizing: border-box; 
+    margin: 0 auto;
+    padding: 8px;
+    width: 50%;
+    height: 500px;
+}
+.left{ border: 0px;
+    float: left;
+    width: 99%;
+}
+.right{
+    float: right;
+    width: 35%;
+    height: 290px;
+}
+header{ height: 60px; margin: 3px 0;}
+.main{
+    width: 63%;
+    border: 0px;}
+.menu{ height: 50px; margin: 8px 0;}
+.div2, .div3 {
+    display: flex;
+    justify-content: center;
+    gap:8px;
+    margin-bottom: 8px; 
+    padding: 8px;
+}
+.div1, .div4 {
+  display: grid;
+  gap:8px;
+  margin-bottom: 8px; 
+  padding: 8px;
+}
+.div1 {
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.div4 {
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+div[class^="item1"], .item2, .item3, div[class^="item4"] {
+    flex:1; 
+    padding: 12px;
+}
+div[class^="item1"] { background-color: rgb(14, 238, 246);}
+.item2{ background-color: rgb(134, 198, 100);}
+.item3{ background-color: rgb(198, 101, 207);}
+div[class^="item4"] { background-color: rgb(151, 169, 218);}
+footer {clear:left; width: 99%; height: 40px;}
