@@ -6,24 +6,18 @@
   <body>
     <form>
       <div>
-        <label for="quiz">問題を選んで下さい。</label><br>
-        <select id="quiz">
-          <option value="1問目">日本で面積が大きい県は？</option>
-          <option value="2問目">世界中で一番高い山は？</option>
-        </select>
+        <p>日本で面積が大きい県は？</p>
         <input id="hint_btn" type="button" value="ヒント"><br>
       </div>
       <div>
         <label for="answer">答えを入力して下さい</label><br>
         <input type="text" name="answer" id="answer">
-        <input id="answer_btn" type="button" value="答え"><br>
       </div>
     </form>
     <script>
       let quiz = document.querySelector('#quiz');
       let answer = document.querySelector('#answer');
       let hint_btn = document.querySelector('#hint_btn');
-      let answer_btn = document.querySelector('#answer_btn');
       let right_answer = "岩手県";
       count = 0;
       hint_btn.addEventListener('click', function() {
@@ -37,7 +31,7 @@
         count++;
       }, false);
       
-      answer_btn.addEventListener('click', function() {
+      answer.addEventListener('change', function() {
         if (answer.value == right_answer) {
           alert("正解です。")
         } else {
