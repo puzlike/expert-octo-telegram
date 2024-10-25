@@ -1,27 +1,61 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	<form>
-		<p>何円の為替損益まで耐えられるか？</p>
-		<p>購入時１米ドル：<input name= "a" size="10" type="number">円</p>
-		<p>　　　　利回り：<input name="b" size="10" type="number">％</p>
-		<p>　　　投資期間：<input name="n" size="10" type="number">年</p>
-		<p>　　　　　答え：<input name="mass" size="10" type="number">円</p>
-	</form>
-	<script>
-		let input = document.getElementsByTagName('input');
-		input[2].addEventListener('change', function() {
-			a = Number.parseInt(input[0].value);
-			b = Number.parseInt(input[1].value);
-			n = Number.parseInt(input[2].value);
-			mass = a / Math.pow((1 + b / 100), n);
-			mass = (Math.round(mass * 100)) / 100;
-			input[3].value = mass; 
-		}, false); 
-	</script>
-</body>
+  <head>
+    <meta charset="uft-8">
+    <title>クイズ(ヒントあり)</title>
+  <body>
+    <form>
+      <div>
+        <label for="quiz">問題を選んで下さい。</label><br>
+        <select id="quiz">
+          <option value="1問目">日本で面積が大きい県は？</option>
+          <option value="2問目">世界中で一番高い山は？</option>
+        </select>
+        <input id="hint_btn" type="button" value="ヒント"><br>
+      </div>
+      <div>
+        <label for="answer">答えを入力して下さい</label><br>
+        <input type="text" name="answer" id="answer">
+        <input id="answer_btn" type="button" value="答え"><br>
+      </div>
+    </form>
+    <script>
+      let quiz = document.querySelector('#quiz');
+      let answer = document.querySelector('#answer');
+      let hint_btn = document.querySelector('#hint_btn');
+      let answer_btn = document.querySelector('#answer_btn');
+      let right_answer = "岩手県";
+      count = 0;
+      hint_btn.addEventListener('click', function() {
+        if (count == 1) {
+          Func_list[count]();
+        } else if (count == 2) {
+          Func_list[count]();
+        } else {
+          Func_list[count]();
+        }
+        count++;
+      }, false);
+      
+      answer_btn.addEventListener('click', function() {
+        if (answer.value == right_answer) {
+          alert("正解です。")
+        } else {
+          alert("不正解です。")
+        } 
+        }, false);
+      var Func_list = [
+        function(){
+          alert("北海道は県ではないので違います。")
+        },
+        function(){
+          alert("東北地方です。")
+        },
+        function(){
+          alert("答えは岩手県です。")
+        }
+      ] 
+      
+    </script>
+  </body>
 </html>
