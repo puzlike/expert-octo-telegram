@@ -7,11 +7,11 @@
     <form>
       <div>
         <p>日本で面積が大きい県は？</p>
-        <input id="hint_btn" type="button" value="ヒント"><br>
       </div>
       <div>
         <label for="answer">答えを入力して下さい</label><br>
         <input type="text" name="answer" id="answer">
+        <input id="hint_btn" type="button" value="ヒント"><br>
       </div>
     </form>
     <script>
@@ -19,25 +19,26 @@
       let answer = document.querySelector('#answer');
       let hint_btn = document.querySelector('#hint_btn');
       let right_answer = "岩手県";
-      count = 0;
+      count = 0
       hint_btn.addEventListener('click', function() {
-        if (count == 1) {
+        if (count == 0) {
           Func_list[count]();
-        } else if (count == 2) {
+        } else if (count == 1) {
           Func_list[count]();
         } else {
           Func_list[count]();
         }
         count++;
-      }, false);
-      
+      })
       answer.addEventListener('change', function() {
         if (answer.value == right_answer) {
+          hint_btn.style.display = 'none'
           alert("正解です。")
         } else {
           alert("不正解です。")
         } 
-        }, false);
+      }, false);
+          
       var Func_list = [
         function(){
           alert("北海道は県ではないので違います。")
