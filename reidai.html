@@ -21,13 +21,8 @@
       let right_answer = "岩手県";
       count = 0
       hint_btn.addEventListener('click', function() {
-        if (count == 0) {
-          Func_list[count]();
-        } else if (count == 1) {
-          Func_list[count]();
-        } else {
-          Func_list[count]();
-        }
+        n = count;
+        Func_list[n]();
         count++;
       })
       answer.addEventListener('change', function() {
