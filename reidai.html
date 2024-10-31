@@ -2,49 +2,65 @@
 <html lang="ja">
   <head>
     <meta charset="uft-8">
-    <title>クイズ(ヒントあり)</title>
+    <title>フレックスレイアウト</title>
+    <style>
+      body {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 210px;
+      }
+      .header, .menu, .side, .footer {
+        margin-top: 10px;
+        width: 200px;
+        height: 100px;
+        border: 1px solid black;
+      }
+      .wrap_box {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        width: 180px;
+        height: auto;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      .box {
+        width: 170px;
+        height: 100px;
+        border: 1px solid black;
+        background-color: lightblue;
+        margin: 5px;
+      }
+    </style>
   <body>
-    <form>
-      <div>
-        <p>日本で面積が大きい県は？</p>
-      </div>
-      <div>
-        <label for="answer">答えを入力して下さい</label><br>
-        <input type="text" name="answer" id="answer">
-        <input id="hint_btn" type="button" value="ヒント"><br>
-      </div>
-    </form>
-    <script>
-      let quiz = document.querySelector('#quiz');
-      let answer = document.querySelector('#answer');
-      let hint_btn = document.querySelector('#hint_btn');
-      let right_answer = "岩手県";
-      count = 0
-      hint_btn.addEventListener('click', function() {
-        Func_list[count]();
-        count++;
-      })
-      answer.addEventListener('change', function() {
-        if (answer.value == right_answer) {
-          hint_btn.style.display = 'none'
-          alert("正解です。")
-        } else {
-          alert("不正解です。")
-        } 
-      }, false);
-          
-      var Func_list = [
-        function(){
-          alert("北海道は県ではないので違います。")
-        },
-        function(){
-          alert("東北地方です。")
-        },
-        function(){
-          alert("答えは岩手県です。")
-        }
-      ] 
-      
-    </script>
+    <div class="header">ヘッダー</div>
+    <div class="menu">メニュー</div>
+    <div class="wrap_box">
+      <div class="box">1段目</div>
+      <div class="box">1段目</div>
+      <div class="box">1段目</div>
+      <div class="box">1段目</div>
+    </div>
+    <div class="wrap_box">
+      <div class="box">2段目</div>
+      <div class="box">2段目</div>
+      <div class="box">2段目</div>
+    </div>
+    <div class="wrap_box">
+      <div class="box">3段目</div>
+      <div class="box">3段目</div>
+    </div>
+    <div class="wrap_box">
+      <div class="box">4段目</div>
+      <div class="box">4段目</div>
+      <div class="box">4段目</div>
+      <div class="box">4段目</div>
+      <div class="box">4段目</div>
+      <div class="box">4段目</div>
+    </div>
+    <div class="side">サイド</div>
+    <div class="footer">フッター</div>
   </body>
 </html>
