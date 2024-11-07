@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+      .wrap {
+        display: flex;
+        flex-direction: column;
+      }
+      .box1, .box2, .box3{
+        display: flex;
+      }
+      
+      .box1>div {
+        border: 1px solid black;
+        flex-basis: 50%;
+      }
+      .box2>div {
+        border: 1px solid black;
+        flex-basis: 33%;
+      }
+      .box3>div {
+        border: 1px solid black;
+        flex-basis: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box1">
+        <div>一段目</div>
+        <div>一段目</div>
+      </div>
+      <div class="box2">
+        <div>二段目</div>
+        <div>二段目</div>
+        <div>二段目</div>
+      </div>
+      <div class="box3">
+        <div>三段目</div>
+        <div>三段目</div>
+        <div>三段目</div>
+        <div>三段目</div>
+      </div>
+    </div>
+  </body>
+</html>
